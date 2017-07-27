@@ -12,11 +12,12 @@ import javax.persistence.*;
 public class TellerPosKeys {
 
     @Id
-    @Column(name = "TELLER_ID")
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "TELLER_ID")
     private
     @Getter
     @Setter
-    Long tellerId;
+    Teller teller;
 
     @Column(name = "MASTER_KEY")
     private
@@ -31,7 +32,7 @@ public class TellerPosKeys {
     String privateKey;
 
     public TellerPosKeys(final TellerPosKeys entity) {
-        setTellerId(entity.getTellerId());
+        setTeller(entity.getTeller());
         setMasterKey(entity.getMasterKey());
         setPrivateKey(entity.getPrivateKey());
     }
