@@ -14,9 +14,10 @@ public class Main {
         // create new teller
         em.getTransaction().begin();
         Teller teller = new Teller();
+        teller.setId(1L);
         teller.setName("Teller1");
         TellerPosKeys keys = new TellerPosKeys();
-        keys.setTeller(teller);
+        keys.setTellerId(teller.getId());
         keys.setMasterKey("MASTER0KEY");
         keys.setPrivateKey("PRIVATE0KEY");
         teller.setPosKeys(keys);
