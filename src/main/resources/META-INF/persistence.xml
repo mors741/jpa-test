@@ -3,8 +3,7 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
     <persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
-        <class>com.mors741.jpa.Teller</class>
-        <class>com.mors741.jpa.TellerPosKeys</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:derby:/home/mors741/databases/simpleDb;create=true" />
