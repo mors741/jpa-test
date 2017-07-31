@@ -12,6 +12,10 @@ import javax.persistence.*;
 public class TellerPosKeys {
 
     @Id
+    @Column(name = "TELLER_ID")
+    Long tellerId;
+
+    @MapsId
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TELLER_ID")
     private

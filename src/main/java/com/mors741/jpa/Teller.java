@@ -28,6 +28,7 @@ public class Teller {
     String name;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "teller")
+    @PrimaryKeyJoinColumn
     private @Getter @Setter TellerPosKeys posKeys;
 
     public Teller(final Teller entity) {
